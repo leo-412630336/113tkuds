@@ -14,7 +14,6 @@ public class matrix {
 
         int[][] c = new int[3][3];
 
-        // 矩陣相乘
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 for (int k = 0; k < 3; k++) {
@@ -23,33 +22,31 @@ public class matrix {
             }
         }
 
-        // 輸出格式
         for (int i = 0; i < 3; i++) {
-            // A
+            
             for (int j = 0; j < 3; j++) {
                 System.out.printf("%3d", a[i][j]);
             }
 
-            // 中間列印 X
+            
             if (i == 1) {
                 System.out.printf("   x ");
             } else {
                 System.out.printf("     ");
             }
 
-            // B
+    
             for (int j = 0; j < 3; j++) {
                 System.out.printf("%3d", b[i][j]);
             }
 
-            // 中間列印 =
             if (i == 1) {
                 System.out.printf("   = ");
             } else {
                 System.out.printf("     ");
             }
 
-            // C
+
             for (int j = 0; j < 3; j++) {
                 System.out.printf("%4d", c[i][j]);
             }

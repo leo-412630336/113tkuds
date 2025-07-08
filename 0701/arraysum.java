@@ -7,7 +7,7 @@ public class arraysum {
     } 
      return total; 
     }
-    
+
  public static void main(String[] args) {
     int[]data={10,20,30,40,50};
     int result=sum(data,data.length);
