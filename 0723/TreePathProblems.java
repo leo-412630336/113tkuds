@@ -8,8 +8,6 @@ public class TreePathProblems {
             this.val = val;
         }
     }
-
-    // 功能 1：找出所有從根到葉的路徑
     public static List<List<Integer>> allPaths(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         traversePaths(root, new ArrayList<>(), result);
@@ -31,7 +29,6 @@ public class TreePathProblems {
         path.remove(path.size() - 1); // 回溯
     }
 
-    // 功能 2：是否存在和為目標值的根到葉路徑
     public static boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null) return false;
 
@@ -42,7 +39,6 @@ public class TreePathProblems {
                hasPathSum(root.right, targetSum - root.val);
     }
 
-    // 功能 3：找出和最大的根到葉路徑
     public static List<Integer> maxPathSum(TreeNode root) {
         List<Integer> maxPath = new ArrayList<>();
         findMaxPath(root, new ArrayList<>(), 0, new int[]{Integer.MIN_VALUE}, maxPath);
@@ -69,18 +65,8 @@ public class TreePathProblems {
         path.remove(path.size() - 1); // 回溯
     }
 
-    // 主程式測試
     public static void main(String[] args) {
-        /*
-            樹結構:
-                  5
-                 / \
-                4   8
-               /   / \
-              11  13  4
-             /  \       \
-            7    2       1
-        */
+      
         TreeNode root = new TreeNode(5);
         root.left = new TreeNode(4);
         root.right = new TreeNode(8);
@@ -91,18 +77,15 @@ public class TreePathProblems {
         root.right.right = new TreeNode(4);
         root.right.right.right = new TreeNode(1);
 
-        // 功能 1：列出所有路徑
         System.out.println("所有根到葉的路徑：");
         List<List<Integer>> paths = allPaths(root);
         for (List<Integer> path : paths) {
             System.out.println(path);
         }
 
-        // 功能 2：是否有和為 22 的路徑？
         int target = 22;
         System.out.println("\n是否存在總和為 " + target + " 的路徑？ " + hasPathSum(root, target));
 
-        // 功能 3：找出和最大的根到葉路徑
         List<Integer> maxPath = maxPathSum(root);
         System.out.println("\n和最大的根到葉路徑：" + maxPath);
     }

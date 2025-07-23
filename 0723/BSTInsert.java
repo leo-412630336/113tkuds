@@ -9,7 +9,6 @@ public class BSTInsert {
         }
     }
     
-    // 插入節點
     public static TreeNode insert(TreeNode root, int data) {
         if (root == null) {
             return new TreeNode(data);
